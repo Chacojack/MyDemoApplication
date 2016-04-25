@@ -82,4 +82,5 @@ public class BaseActivity extends AppCompatActivity {
     public void logd(String s) {
         Log.d(this.getClass().getSimpleName(), s);
     }
+
 }

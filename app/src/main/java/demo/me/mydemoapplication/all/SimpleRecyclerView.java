@@ -24,7 +24,7 @@ public class SimpleRecyclerView extends RelativeLayout {
     final static int LAYOUT_ID = R.layout.view_simple_recycler;
 
     RecyclerView recyclerView;
-    private SimpleAdapter adapter = new SimpleAdapter();
+    SimpleAdapter adapter = new SimpleAdapter();
 
     public SimpleRecyclerView(Context context) {
         super(context);
@@ -64,9 +64,26 @@ public class SimpleRecyclerView extends RelativeLayout {
         adapter.addAllData(Arrays.asList(string));
     }
 
+    /**
+     * 为Recycler设置点击事件监听器
+     *
+     * @param simpleItemClickedListener
+     */
+    public void setOnSimpleItemClicked(OnSimpleItemClickedListener simpleItemClickedListener) {
+        adapter.setOnSimpleItemClickedListener(simpleItemClickedListener);
+    }
+
     class SimpleAdapter extends RecyclerView.Adapter<SimpleViewHolder> {
 
         List<String> data = new ArrayList<>();
+        OnSimpleItemClickedListener onSimpleItemClickedListener;
+
+        public SimpleAdapter() {
+        }
+
+        public SimpleAdapter(OnSimpleItemClickedListener onSimpleItemClickedListener) {
+            this.onSimpleItemClickedListener = onSimpleItemClickedListener;
+        }
 
         @Override
         public SimpleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -75,7 +92,14 @@ public class SimpleRecyclerView extends RelativeLayout {
 
         @Override
         public void onBindViewHolder(SimpleViewHolder holder, int position) {
-            holder.bind(data.get(position));
+            holder.bind(data.get(position), new OnSimpleItemClickedListener() {
+                @Override
+                public void onSimpleItemClicked(String s) {
+                    if (onSimpleItemClickedListener != null) {
+                        onSimpleItemClickedListener.onSimpleItemClicked(s);
+                    }
+                }
+            });
         }
 
         @Override
@@ -86,6 +110,14 @@ public class SimpleRecyclerView extends RelativeLayout {
         public void addAllData(List<String> datas) {
             data.addAll(datas);
             notifyDataSetChanged();
+        }
+
+        public OnSimpleItemClickedListener getOnSimpleItemClickedListener() {
+            return onSimpleItemClickedListener;
+        }
+
+        public void setOnSimpleItemClickedListener(OnSimpleItemClickedListener onSimpleItemClickedListener) {
+            this.onSimpleItemClickedListener = onSimpleItemClickedListener;
         }
     }
 
@@ -99,8 +131,20 @@ public class SimpleRecyclerView extends RelativeLayout {
             textView = (TextView) itemView.findViewById(R.id.txt_simple);
         }
 
-        public void bind(String s) {
+        public void bind(final String s, final OnSimpleItemClickedListener onSimpleItemClickedListener) {
             textView.setText(s);
+            textView.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (onSimpleItemClickedListener != null) {
+                        onSimpleItemClickedListener.onSimpleItemClicked(s);
+                    }
+                }
+            });
         }
+    }
+
+    public interface OnSimpleItemClickedListener {
+        void onSimpleItemClicked(String s);
     }
 }
