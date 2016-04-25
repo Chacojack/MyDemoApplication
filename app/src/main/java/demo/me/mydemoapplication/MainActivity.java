@@ -1,13 +1,18 @@
 package demo.me.mydemoapplication;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import demo.me.mydemoapplication.all.BaseListActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseListActivity {
+
+    public final static String UI = "UI";
+
+    private String[] string = {UI};
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected void afterViews() {
+        super.afterViews();
+        simpleRecyclerView.addAllData(string);
     }
+
+
 }
