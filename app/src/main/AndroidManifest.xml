@@ -29,6 +29,10 @@
             android:name=".ui.coordinator.CoordinatorActivity2"
             android:label="@string/coordinator"
             android:theme="@style/AppThemeNoActionBar"/>
+        <activity
+            android:name=".ui.coordinator.BehaviorActivity"
+            android:label="@string/coordinator"
+            android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>

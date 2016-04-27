@@ -4,6 +4,7 @@ import android.content.Intent;
 
 import demo.me.mydemoapplication.all.BaseListActivity;
 import demo.me.mydemoapplication.all.SimpleRecyclerView;
+import demo.me.mydemoapplication.ui.coordinator.BehaviorActivity;
 import demo.me.mydemoapplication.ui.coordinator.CoordinatorActivity;
 import demo.me.mydemoapplication.ui.coordinator.CoordinatorActivity2;
 
@@ -12,9 +13,9 @@ import demo.me.mydemoapplication.ui.coordinator.CoordinatorActivity2;
  */
 public class UIActivity extends BaseListActivity {
 
-    public static final String COORDINATOR = "coordinator", COORDINATOR2 = "coordinator2";
+    public static final String COORDINATOR = "coordinator", COORDINATOR2 = "coordinator2", BEHAVIOR = "behavior";
 
-    String[] strings = {COORDINATOR, COORDINATOR2};
+    String[] strings = {COORDINATOR, COORDINATOR2, BEHAVIOR};
 
     @Override
     protected void afterViews() {
@@ -30,9 +31,16 @@ public class UIActivity extends BaseListActivity {
                     case COORDINATOR2:
                         doCoordinatorClick2();
                         break;
+                    case BEHAVIOR:
+                        doBehaviorClick();
+                        break;
                 }
             }
         });
+    }
+
+    private void doBehaviorClick() {
+        startActivity(new Intent(this, BehaviorActivity.class));
     }
 
     private void doCoordinatorClick2() {
