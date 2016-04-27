@@ -13,7 +13,17 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         logd("onCreate");
+        initIntentExtra(savedInstanceState);
         initViews();
+    }
+
+    /**
+     * 初始化传入数据
+     *
+     * @param savedInstanceState
+     */
+    protected void initIntentExtra(Bundle savedInstanceState) {
+        logd("initIntentExtra");
     }
 
     private final void initViews() {

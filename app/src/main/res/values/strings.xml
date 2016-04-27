@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MyDemoApplication</string>
+    <string name="ui">UI</string>
+    <string name="coordinator">Coordinator</string>
+    <string name="card_view">CardView</string>
+    <string name="card_view_content"><![CDATA[CardView uses <code>elevation</code> property on Lollipop for shadows and falls back to a custom emulated shadow implementation on older platforms.]]></string>
 </resources>

@@ -3,4 +3,14 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="simple_padding">8dp</dimen>
+    <dimen name="fab_width">56dp</dimen>
+    <dimen name="fab_margin">36dp</dimen>
+    <dimen name="font_size_12dp">12dp</dimen>
+    <dimen name="font_size_24dp">24dp</dimen>
+    <dimen name="pager_height">48dp</dimen>
+    <dimen name="tab_height">48dp</dimen>
+    <dimen name="txt_simple_height">42dp</dimen>
+    <dimen name="abl_coordinator2_height">256dp</dimen>
+    <dimen name="card_view_margin">16dp</dimen>
+    <dimen name="card_view_padding">16dp</dimen>
 </resources>

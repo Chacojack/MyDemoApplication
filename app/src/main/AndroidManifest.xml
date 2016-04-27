@@ -9,14 +9,26 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.UIActivity"/>
+        <activity
+            android:name=".ui.UIActivity"
+            android:label="@string/ui"/>
+        <activity
+            android:name=".ui.coordinator.CoordinatorActivity"
+            android:label="@string/coordinator"
+            android:theme="@style/AppThemeNoActionBar"/>
+        <activity
+            android:name=".ui.coordinator.CoordinatorActivity2"
+            android:label="@string/coordinator"
+            android:theme="@style/AppThemeNoActionBar"/>
     </application>
 
 </manifest>

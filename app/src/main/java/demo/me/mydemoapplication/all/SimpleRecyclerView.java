@@ -73,6 +73,10 @@ public class SimpleRecyclerView extends RelativeLayout {
         adapter.setOnSimpleItemClickedListener(simpleItemClickedListener);
     }
 
+    public void addAllData(List<String> datas) {
+        adapter.addAllData(datas);
+    }
+
     class SimpleAdapter extends RecyclerView.Adapter<SimpleViewHolder> {
 
         List<String> data = new ArrayList<>();
@@ -125,15 +129,17 @@ public class SimpleRecyclerView extends RelativeLayout {
     class SimpleViewHolder extends RecyclerView.ViewHolder {
 
         TextView textView;
+        RelativeLayout rootLayout;
 
         public SimpleViewHolder(View itemView) {
             super(itemView);
             textView = (TextView) itemView.findViewById(R.id.txt_simple);
+            rootLayout = (RelativeLayout) itemView.findViewById(R.id.rl_simple);
         }
 
         public void bind(final String s, final OnSimpleItemClickedListener onSimpleItemClickedListener) {
             textView.setText(s);
-            textView.setOnClickListener(new OnClickListener() {
+            rootLayout.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (onSimpleItemClickedListener != null) {

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/drawer_root"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/abl_coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_coordinator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:navigationIcon="@drawable/drawer_icon"
+            android:title="@string/coordinator"
+            android:titleTextColor="?attr/titleTextColor"
+            app:layout_scrollFlags="scroll|enterAlways"
+            />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_coordinator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tab_height"
+                android:text="TAB1"/>
+
+            <android.support.design.widget.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tab_height"
+                android:text="TAB2"/>
+
+            <android.support.design.widget.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tab_height"
+                android:text="TAB3"/>
+
+        </android.support.design.widget.TabLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager_coordinator"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_coordinator"
+        android:layout_width="@dimen/fab_width"
+        android:layout_height="@dimen/fab_width"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/fab_margin"
+        />
+
+
+</android.support.design.widget.CoordinatorLayout>
+
