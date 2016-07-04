@@ -33,6 +33,9 @@
             android:name=".ui.coordinator.BehaviorActivity"
             android:label="@string/coordinator"
             android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".ui.bitmap.BitmapPreviewActivity"
+            android:label="@string/title_activity_bitmap_preview"/>
     </application>
 
 </manifest>

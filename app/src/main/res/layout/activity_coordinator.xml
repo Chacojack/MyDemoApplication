@@ -10,6 +10,7 @@
         android:id="@+id/abl_coordinator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_behavior="demo.me.mydemoapplication.ui.coordinator.MyHeaderBehavior"
         >
 
         <android.support.v7.widget.Toolbar
@@ -51,7 +52,8 @@
         android:id="@+id/pager_coordinator"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        app:layout_behavior="demo.me.mydemoapplication.ui.coordinator.MyHeaderBehavior"
+        />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_coordinator"

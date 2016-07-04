@@ -4,6 +4,7 @@ import android.content.Intent;
 
 import demo.me.mydemoapplication.all.BaseListActivity;
 import demo.me.mydemoapplication.all.SimpleRecyclerView;
+import demo.me.mydemoapplication.ui.bitmap.BitmapPreviewActivity;
 import demo.me.mydemoapplication.ui.coordinator.BehaviorActivity;
 import demo.me.mydemoapplication.ui.coordinator.CoordinatorActivity;
 import demo.me.mydemoapplication.ui.coordinator.CoordinatorActivity2;
@@ -13,9 +14,9 @@ import demo.me.mydemoapplication.ui.coordinator.CoordinatorActivity2;
  */
 public class UIActivity extends BaseListActivity {
 
-    public static final String COORDINATOR = "coordinator", COORDINATOR2 = "coordinator2", BEHAVIOR = "behavior";
+    public static final String COORDINATOR = "coordinator", COORDINATOR2 = "coordinator2", BEHAVIOR = "behavior", BITMAP = "bitmap";
 
-    String[] strings = {COORDINATOR, COORDINATOR2, BEHAVIOR};
+    String[] strings = {COORDINATOR, COORDINATOR2, BEHAVIOR, BITMAP};
 
     @Override
     protected void afterViews() {
@@ -34,9 +35,16 @@ public class UIActivity extends BaseListActivity {
                     case BEHAVIOR:
                         doBehaviorClick();
                         break;
+                    case BITMAP:
+                        doBitmapClick();
+                        break;
                 }
             }
         });
+    }
+
+    private void doBitmapClick() {
+        startActivity(new Intent(this, BitmapPreviewActivity.class));
     }
 
     private void doBehaviorClick() {
