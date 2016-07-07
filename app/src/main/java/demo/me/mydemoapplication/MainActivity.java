@@ -4,13 +4,14 @@ import android.content.Intent;
 
 import demo.me.mydemoapplication.all.BaseListActivity;
 import demo.me.mydemoapplication.all.SimpleRecyclerView;
+import demo.me.mydemoapplication.gradle.ChannelActivity;
 import demo.me.mydemoapplication.ui.UIActivity;
 
 public class MainActivity extends BaseListActivity {
 
-    public final static String UI = "UI";
+    public final static String UI = "UI",GRADLE = "GRADLE";
 
-    String[] string = {UI};
+    String[] string = {UI,GRADLE};
 
     @Override
     protected void afterViews() {
@@ -23,9 +24,16 @@ public class MainActivity extends BaseListActivity {
                     case UI:
                         doUIClicked();
                         break;
+                    case GRADLE:
+                        doGrableClicked();
+                        break;
                 }
             }
         });
+    }
+
+    private void doGrableClicked() {
+        startActivity(new Intent(this, ChannelActivity.class));
     }
 
     private void doUIClicked() {
