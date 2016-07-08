@@ -9,7 +9,7 @@ import demo.me.mydemoapplication.ui.UIActivity;
 
 public class MainActivity extends BaseListActivity {
 
-    public final static String UI = "UI",GRADLE = "GRADLE";
+    public final static String UI = "UI",GRADLE = "Gradle";
 
     String[] string = {UI,GRADLE};
 
@@ -25,14 +25,14 @@ public class MainActivity extends BaseListActivity {
                         doUIClicked();
                         break;
                     case GRADLE:
-                        doGrableClicked();
+                        doGradleClicked();
                         break;
                 }
             }
         });
     }
 
-    private void doGrableClicked() {
+    private void doGradleClicked() {
         startActivity(new Intent(this, ChannelActivity.class));
     }
 
