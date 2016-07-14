@@ -42,7 +42,7 @@
 
         <activity android:name=".gradle.ChannelActivity">
         </activity>
-        <activity android:name=".plugins.ButterKniftActivity">
+        <activity android:name=".plugins.ButterKnifeActivity">
         </activity>
     </application>
 
