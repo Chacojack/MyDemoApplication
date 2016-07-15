@@ -2,10 +2,7 @@ package demo.me.mydemoapplication.plugins;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ImageView;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
 import demo.me.mydemoapplication.R;
 
 public class ButterKnifeActivity extends AppCompatActivity {

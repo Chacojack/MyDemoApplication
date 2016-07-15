@@ -5,13 +5,14 @@ import android.content.Intent;
 import demo.me.mydemoapplication.all.BaseListActivity;
 import demo.me.mydemoapplication.all.SimpleRecyclerView;
 import demo.me.mydemoapplication.gradle.ChannelActivity;
+import demo.me.mydemoapplication.sp.SPActivity;
 import demo.me.mydemoapplication.ui.UIActivity;
 
 public class MainActivity extends BaseListActivity {
 
-    public final static String UI = "UI",GRADLE = "Gradle";
+    public final static String UI = "UI",GRADLE = "Gradle",SP = "SP";
 
-    String[] string = {UI,GRADLE};
+    String[] string = {UI,GRADLE,SP};
 
     @Override
     protected void afterViews() {
@@ -27,9 +28,16 @@ public class MainActivity extends BaseListActivity {
                     case GRADLE:
                         doGradleClicked();
                         break;
+                    case SP:
+                        doSPClicked();
+                        break;
                 }
             }
         });
+    }
+
+    private void doSPClicked() {
+        startActivity(new Intent(this, SPActivity.class));
     }
 
     private void doGradleClicked() {
