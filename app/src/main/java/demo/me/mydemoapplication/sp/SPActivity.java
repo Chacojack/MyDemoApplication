@@ -3,10 +3,9 @@ package demo.me.mydemoapplication.sp;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.Preference;
 import android.preference.PreferenceManager;
+import android.support.design.widget.Snackbar;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 import demo.me.mydemoapplication.R;
@@ -14,10 +13,10 @@ import demo.me.mydemoapplication.R;
 /**
  * Created by zjchai on 16/7/14.
  */
-public class SPActivity extends Activity implements View.OnClickListener{
+public class SPActivity extends Activity implements View.OnClickListener,SharedPreferences.OnSharedPreferenceChangeListener {
 
     EditText editTextName ;
-    EditText editTextValue ;
+    EditText editTextAge;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +28,7 @@ public class SPActivity extends Activity implements View.OnClickListener{
         findViewById(R.id.btn_diy).setOnClickListener(this);
 
         editTextName = getEditName() ;
-        editTextValue = getEditValue() ;
+        editTextAge = getEditAge() ;
 
     }
 
@@ -37,8 +36,8 @@ public class SPActivity extends Activity implements View.OnClickListener{
         return (EditText) findViewById(R.id.edit_name);
     }
 
-    private EditText getEditValue(){
-        return (EditText) findViewById(R.id.edit_value);
+    private EditText getEditAge(){
+        return (EditText) findViewById(R.id.edit_age);
     }
 
     @Override
@@ -60,15 +59,16 @@ public class SPActivity extends Activity implements View.OnClickListener{
         SharedPreferences diySP = getSharedPreferences("diy",MODE_PRIVATE) ;
         diySP.edit()
                 .putString("name",editTextName.getText().toString())
-                .putString("value",editTextValue.getText().toString())
+                .putString("age", editTextAge.getText().toString())
                 .apply();
+        diySP.registerOnSharedPreferenceChangeListener(this);
     }
 
     private void doSaveWithAppSharePreference() {
         SharedPreferences appSP = PreferenceManager.getDefaultSharedPreferences(this) ;
         appSP.edit()
                 .putString("name",editTextName.getText().toString())
-                .putString("value",editTextValue.getText().toString())
+                .putString("age", editTextAge.getText().toString())
                 .apply();
     }
 
@@ -76,10 +76,14 @@ public class SPActivity extends Activity implements View.OnClickListener{
         SharedPreferences activitySP = getPreferences(MODE_PRIVATE) ;
         activitySP.edit()
                 .putString("name",editTextName.getText().toString())
-                .putString("value",editTextValue.getText().toString())
+                .putString("age", editTextAge.getText().toString())
                 .apply();
 
     }
 
 
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        Snackbar.make(getWindow().getDecorView(),key+" changed to :"+sharedPreferences.getString(key,""),Snackbar.LENGTH_LONG).show();
+    }
 }
