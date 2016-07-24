@@ -45,6 +45,10 @@
         </activity>
         <activity android:name=".plugins.ButterKnifeActivity">
         </activity>
+        <activity android:name=".test.TestActivity">
+        </activity>
+        <activity android:name=".test.SparseArrayActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -6,13 +6,14 @@ import demo.me.mydemoapplication.all.BaseListActivity;
 import demo.me.mydemoapplication.all.SimpleRecyclerView;
 import demo.me.mydemoapplication.gradle.ChannelActivity;
 import demo.me.mydemoapplication.sp.SPActivity;
+import demo.me.mydemoapplication.test.TestActivity;
 import demo.me.mydemoapplication.ui.UIActivity;
 
 public class MainActivity extends BaseListActivity {
 
-    public final static String UI = "UI",GRADLE = "Gradle",SP = "SP";
+    public final static String UI = "UI",GRADLE = "Gradle",SP = "SP",TEST = "TEST";
 
-    String[] string = {UI,GRADLE,SP};
+    String[] string = {UI,GRADLE,SP,TEST};
 
     @Override
     protected void afterViews() {
@@ -31,9 +32,16 @@ public class MainActivity extends BaseListActivity {
                     case SP:
                         doSPClicked();
                         break;
+                    case TEST:
+                        doTestClicked();
+                        break;
                 }
             }
         });
+    }
+
+    private void doTestClicked() {
+        startActivity(new Intent(this, TestActivity.class));
     }
 
     private void doSPClicked() {
