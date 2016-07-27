@@ -11,11 +11,13 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".ui.UIActivity"
@@ -48,6 +50,18 @@
         <activity android:name=".test.TestActivity">
         </activity>
         <activity android:name=".test.SparseArrayActivity">
+        </activity>
+        <activity
+            android:name=".ui.keyboard.KeyBoardActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.keyboard.KeyBoardForwardActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+
         </activity>
     </application>
 
