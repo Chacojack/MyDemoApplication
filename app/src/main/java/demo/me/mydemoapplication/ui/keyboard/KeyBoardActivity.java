@@ -22,6 +22,15 @@ public class KeyBoardActivity extends AppCompatActivity {
                 startActivity(new Intent(KeyBoardActivity.this,KeyBoardForwardActivity.class));
             }
         });
+
+
+
+
+
+
+
+
+
     }
 
 
