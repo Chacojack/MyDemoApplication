@@ -5,15 +5,16 @@ import android.content.Intent;
 import demo.me.mydemoapplication.all.BaseListActivity;
 import demo.me.mydemoapplication.all.SimpleRecyclerView;
 import demo.me.mydemoapplication.gradle.ChannelActivity;
+import demo.me.mydemoapplication.input.KeyboardActivity;
 import demo.me.mydemoapplication.sp.SPActivity;
 import demo.me.mydemoapplication.test.TestActivity;
 import demo.me.mydemoapplication.ui.UIActivity;
 
 public class MainActivity extends BaseListActivity {
 
-    public final static String UI = "UI",GRADLE = "Gradle",SP = "SP",TEST = "TEST";
+    public final static String UI = "UI",GRADLE = "Gradle",SP = "SP",TEST = "TEST",Keyboard = "Keyboard";
 
-    String[] string = {UI,GRADLE,SP,TEST};
+    String[] string = {UI,GRADLE,SP,TEST,Keyboard};
 
     @Override
     protected void afterViews() {
@@ -35,9 +36,16 @@ public class MainActivity extends BaseListActivity {
                     case TEST:
                         doTestClicked();
                         break;
+                    case Keyboard:
+                        doKeyboardClicked();
+                        break;
                 }
             }
         });
+    }
+
+    private void doKeyboardClicked() {
+        startActivity(new Intent(this, KeyboardActivity.class));
     }
 
     private void doTestClicked() {
