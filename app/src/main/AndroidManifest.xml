@@ -76,6 +76,8 @@
         </activity>
         <activity android:name=".ui.canvas.CanvasActivity">
         </activity>
+        <activity android:name=".ui.colorMatrix.ColorMatrixActivity">
+        </activity>
     </application>
 
 </manifest>

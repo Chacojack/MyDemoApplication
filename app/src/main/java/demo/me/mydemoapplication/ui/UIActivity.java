@@ -7,6 +7,7 @@ import demo.me.mydemoapplication.all.SimpleRecyclerView;
 import demo.me.mydemoapplication.ui.bitmap.BitmapPreviewActivity;
 import demo.me.mydemoapplication.ui.canvas.CanvasActivity;
 import demo.me.mydemoapplication.ui.clock.ClockActivity;
+import demo.me.mydemoapplication.ui.colorMatrix.ColorMatrixActivity;
 import demo.me.mydemoapplication.ui.coordinator.BehaviorActivity;
 import demo.me.mydemoapplication.ui.coordinator.CoordinatorActivity;
 import demo.me.mydemoapplication.ui.coordinator.CoordinatorActivity2;
@@ -19,8 +20,9 @@ public class UIActivity extends BaseListActivity {
     public static final String COORDINATOR = "coordinator", COORDINATOR2 = "coordinator2", BEHAVIOR = "behavior", BITMAP = "bitmap";
     public static final String CLOCK = "clock";
     public static final String CANVAS = "canvas";
+    public static final String COLORMATRIX = "colormatrix";
 
-    String[] strings = {COORDINATOR, COORDINATOR2, BEHAVIOR, BITMAP,CLOCK,CANVAS};
+    String[] strings = {COORDINATOR, COORDINATOR2, BEHAVIOR, BITMAP, CLOCK, CANVAS, COLORMATRIX};
 
     @Override
     protected void afterViews() {
@@ -46,12 +48,19 @@ public class UIActivity extends BaseListActivity {
                         doClockClick();
                         break;
                     case CANVAS:
-                        doCanvasClick() ;
+                        doCanvasClick();
+                        break;
+                    case COLORMATRIX:
+                        doColorMatrixClick();
                         break;
 
                 }
             }
         });
+    }
+
+    private void doColorMatrixClick() {
+        startActivity(new Intent(this, ColorMatrixActivity.class));
     }
 
     private void doCanvasClick() {
