@@ -5,6 +5,7 @@ import android.content.Intent;
 import demo.me.mydemoapplication.all.BaseListActivity;
 import demo.me.mydemoapplication.all.SimpleRecyclerView;
 import demo.me.mydemoapplication.ui.bitmap.BitmapPreviewActivity;
+import demo.me.mydemoapplication.ui.clock.ClockActivity;
 import demo.me.mydemoapplication.ui.coordinator.BehaviorActivity;
 import demo.me.mydemoapplication.ui.coordinator.CoordinatorActivity;
 import demo.me.mydemoapplication.ui.coordinator.CoordinatorActivity2;
@@ -15,8 +16,9 @@ import demo.me.mydemoapplication.ui.coordinator.CoordinatorActivity2;
 public class UIActivity extends BaseListActivity {
 
     public static final String COORDINATOR = "coordinator", COORDINATOR2 = "coordinator2", BEHAVIOR = "behavior", BITMAP = "bitmap";
+    public static final String CLOCK = "clock";
 
-    String[] strings = {COORDINATOR, COORDINATOR2, BEHAVIOR, BITMAP};
+    String[] strings = {COORDINATOR, COORDINATOR2, BEHAVIOR, BITMAP,CLOCK};
 
     @Override
     protected void afterViews() {
@@ -38,9 +40,16 @@ public class UIActivity extends BaseListActivity {
                     case BITMAP:
                         doBitmapClick();
                         break;
+                    case CLOCK:
+                        doClockClick();
+                        break;
                 }
             }
         });
+    }
+
+    private void doClockClick() {
+        startActivity(new Intent(this, ClockActivity.class));
     }
 
     private void doBitmapClick() {
