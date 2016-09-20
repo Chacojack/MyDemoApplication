@@ -11,11 +11,11 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
         </activity>
         <activity
             android:name=".ui.UIActivity"
@@ -77,6 +77,15 @@
         <activity android:name=".ui.canvas.CanvasActivity">
         </activity>
         <activity android:name=".ui.colorMatrix.ColorMatrixActivity">
+        </activity>
+        <activity android:name=".ui.mesh.MeshActivity">
+        </activity>
+        <activity android:name=".ui.drag.DragActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
     </application>
 

@@ -11,6 +11,7 @@ import demo.me.mydemoapplication.ui.colorMatrix.ColorMatrixActivity;
 import demo.me.mydemoapplication.ui.coordinator.BehaviorActivity;
 import demo.me.mydemoapplication.ui.coordinator.CoordinatorActivity;
 import demo.me.mydemoapplication.ui.coordinator.CoordinatorActivity2;
+import demo.me.mydemoapplication.ui.mesh.MeshActivity;
 
 /**
  * Created by zjchai on 16/4/25.
@@ -21,8 +22,9 @@ public class UIActivity extends BaseListActivity {
     public static final String CLOCK = "clock";
     public static final String CANVAS = "canvas";
     public static final String COLORMATRIX = "colormatrix";
+    public static final String MESH = "mash";
 
-    String[] strings = {COORDINATOR, COORDINATOR2, BEHAVIOR, BITMAP, CLOCK, CANVAS, COLORMATRIX};
+    String[] strings = {COORDINATOR, COORDINATOR2, BEHAVIOR, BITMAP, CLOCK, CANVAS, COLORMATRIX, MESH};
 
     @Override
     protected void afterViews() {
@@ -53,10 +55,16 @@ public class UIActivity extends BaseListActivity {
                     case COLORMATRIX:
                         doColorMatrixClick();
                         break;
-
+                    case MESH:
+                        doMeshClick() ;
+                        break;
                 }
             }
         });
+    }
+
+    private void doMeshClick() {
+        startActivity(new Intent(this, MeshActivity.class));
     }
 
     private void doColorMatrixClick() {
