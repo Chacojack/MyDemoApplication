@@ -50,4 +50,5 @@ dependencies {
     compile 'com.android.support:percent:23.0.0'
 
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
+    compile 'org.projectlombok:lombok:1.16.10'
 }
