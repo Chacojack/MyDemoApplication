@@ -3,6 +3,9 @@ package demo.me.mydemoapplication;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ViewPropertyAnimator;
+import android.widget.TextView;
+import android.widget.ViewAnimator;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -26,6 +29,7 @@ public class SplashActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: use time " + (System.currentTimeMillis() - start));
         Log.d(TAG, "onCreate: a : "+a);
         setContentView(R.layout.activity_splash);
+
     }
 
 
