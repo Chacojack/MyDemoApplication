@@ -84,13 +84,16 @@
         <activity android:name=".ui.ConstraintLayoutActivity">
         </activity>
         <activity android:name=".parall.ParallActivity">
+
+        </activity>
+        <activity android:name=".lombok.LombokActivity">
+        </activity>
+        <activity android:name=".stop.StopTestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity android:name=".lombok.LombokActivity">
         </activity>
     </application>
 
