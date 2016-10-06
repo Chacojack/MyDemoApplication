@@ -84,11 +84,13 @@
         <activity android:name=".ui.ConstraintLayoutActivity">
         </activity>
         <activity android:name=".parall.ParallActivity">
-
         </activity>
         <activity android:name=".lombok.LombokActivity">
         </activity>
         <activity android:name=".stop.StopTestActivity">
+
+        </activity>
+        <activity android:name=".ui.path.PathEffectActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
