@@ -88,9 +88,11 @@
         <activity android:name=".lombok.LombokActivity">
         </activity>
         <activity android:name=".stop.StopTestActivity">
-
         </activity>
         <activity android:name=".ui.path.PathEffectActivity">
+
+        </activity>
+        <activity android:name=".ui.vector.VectorActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
