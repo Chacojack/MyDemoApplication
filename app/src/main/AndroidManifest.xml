@@ -94,18 +94,20 @@
         <activity android:name=".ui.vector.VectorActivity">
         </activity>
         <activity android:name=".ui.view.CustomActivity">
-
         </activity>
         <activity android:name=".launchmode.FirstActivity">
+
+        </activity>
+        <activity
+            android:name=".launchmode.SecondActivity"
+            android:launchMode="singleInstance">
+        </activity>
+        <activity android:name=".ui.animator.CircularRevealActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity android:name=".launchmode.SecondActivity"
-            android:launchMode="singleInstance"
-            >
         </activity>
     </application>
 
