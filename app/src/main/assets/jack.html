@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ÎÞ±êÌâÎÄµµ</title>
+
+<script type="text/javascript" >
+function getInfoFromAndroid(){
+	var s = jackJS.getInfoFromAndroid();
+	alert(s);
+	document.getElementById("showInfoFromAndroid").innerHTML = s;
+}
+
+function postInfoToAndroid(){
+	var s = document.getElementById("editText").value;
+	alert(s);
+	jackJS.postInfoFormJS(s);
+}
+
+</script>
+
+</head>
+
+<body>
+
+
+<button id="getInfoFromAndroid" onClick="getInfoFromAndroid()">点我从Android获取信息</button>
+
+<button id="postInfoToAndroid" onClick="postInfoToAndroid()">点我发送信息给Android</button>
+
+<input type="text" id="editText"/>
+
+<p id="showInfoFromAndroid"></p>
+
+</body>
+</html>
