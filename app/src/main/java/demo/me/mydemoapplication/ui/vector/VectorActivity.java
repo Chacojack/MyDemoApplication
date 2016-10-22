@@ -1,5 +1,7 @@
 package demo.me.mydemoapplication.ui.vector;
 
+import android.graphics.drawable.Animatable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +13,7 @@ import demo.me.mydemoapplication.R;
 
 public class VectorActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,10 +21,15 @@ public class VectorActivity extends AppCompatActivity {
 
         Log.d(VectorActivity.class.getSimpleName(), "onCreate: ");
 
-        VectorDrawableCompat vectorDrawableCompat = VectorDrawableCompat.create(
-                getResources(), R.drawable.vector_demo_bg, null);
-        ((ImageView)findViewById(R.id.test)).setImageDrawable(vectorDrawableCompat);
+//        VectorDrawableCompat vectorDrawableCompat = VectorDrawableCompat.create(
+//                getResources(), R.drawable.vector_demo_bg, null);
+//        ((ImageView)findViewById(R.id.test)).setImageDrawable(vectorDrawableCompat);
 
+
+        Drawable drawable = ((ImageView) findViewById(R.id.test)).getDrawable();
+        if (drawable instanceof Animatable) {
+            ((Animatable) drawable).start();
+        }
 
     }
 }

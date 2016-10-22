@@ -94,6 +94,11 @@
         <activity android:name=".ui.path.PathEffectActivity">
         </activity>
         <activity android:name=".ui.vector.VectorActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".ui.view.CustomActivity">
         </activity>
@@ -107,11 +112,7 @@
 
         </activity>
         <activity android:name=".js.JavaScriptActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
     </application>
 
