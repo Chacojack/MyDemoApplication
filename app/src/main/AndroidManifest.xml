@@ -117,13 +117,17 @@
             android:configChanges="screenSize|orientation">
         </activity>
         <activity android:name=".service.ServiceActivity">
+        </activity>
+
+        <service android:name=".service.MyService"/>
+
+        <activity android:name=".broadcast.BroadcastActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <service android:name=".service.MyService"/>
     </application>
 
 </manifest>
