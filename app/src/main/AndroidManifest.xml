@@ -2,7 +2,7 @@
 <manifest package="demo.me.mydemoapplication"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -31,7 +31,8 @@
         <activity
             android:name=".ui.coordinator.CoordinatorActivity2"
             android:label="@string/coordinator"
-            android:theme="@style/AppThemeNoActionBar"/>
+            android:theme="@style/AppThemeNoActionBar">
+        </activity>
         <activity
             android:name=".ui.coordinator.BehaviorActivity"
             android:label="@string/coordinator"
@@ -94,11 +95,6 @@
         <activity android:name=".ui.path.PathEffectActivity">
         </activity>
         <activity android:name=".ui.vector.VectorActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name=".ui.view.CustomActivity">
         </activity>
@@ -109,10 +105,17 @@
             android:launchMode="singleInstance">
         </activity>
         <activity android:name=".ui.animator.CircularRevealActivity">
-
         </activity>
         <activity android:name=".js.JavaScriptActivity">
+        </activity>
+        <activity android:name=".ui.choreographer.ChoreographerActivity">
+        </activity>
+        <activity android:name=".ui.coordinator.CoordinatorActivity4">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
 
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
     </application>
 

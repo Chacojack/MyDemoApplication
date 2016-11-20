@@ -1,49 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout
+    android:id="@+id/activity_main2"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    tools:context="demo.me.mydemoapplication.ui.coordinator.CoordinatorActivity4"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/abl_coordinator2"
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/abl_coordinator2_height"
-        android:fitsSystemWindows="true">
+        android:layout_height="200dp"
+        android:background="@color/red"
+        >
 
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:contentScrim="?attr/colorPrimary"
-            app:expandedTitleMarginEnd="64dp"
-            app:expandedTitleMarginStart="48dp"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:title="@string/coordinator"
-            >
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/header_coordinator"
-                app:layout_collapseMode="parallax"/>
-
-            <android.support.v7.widget.Toolbar
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:title="@string/coordinator"
-                app:layout_collapseMode="pin"/>
-
-        </android.support.design.widget.CollapsingToolbarLayout>
-
-
-    </android.support.design.widget.AppBarLayout>
+    </RelativeLayout>
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <!--app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
+        app:layout_behavior="demo.me.mydemoapplication.ui.coordinator.CostumeBehavior"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -193,13 +172,6 @@
 
 
     </android.support.v4.widget.NestedScrollView>
-
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="@dimen/fab_width"
-        android:layout_height="@dimen/fab_width"
-        android:layout_margin="@dimen/fab_margin"
-        app:layout_anchor="@id/abl_coordinator2"
-        app:layout_anchorGravity="bottom|right|end"
-        />
+    
 
 </android.support.design.widget.CoordinatorLayout>
