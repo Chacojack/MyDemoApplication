@@ -111,6 +111,10 @@
         <activity android:name=".ui.choreographer.ChoreographerActivity">
         </activity>
         <activity android:name=".ui.coordinator.CoordinatorActivity4">
+        </activity>
+        <activity android:name=".ui.activity.ConfigChangeActivity"
+                  android:configChanges="screenSize|orientation"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
