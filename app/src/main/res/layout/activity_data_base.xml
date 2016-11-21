@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/activity_data_base"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="demo.me.mydemoapplication.database.DataBaseActivity">
+
+    <Button
+        android:id="@+id/create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create"
+        />
+
+    <Button
+        android:id="@+id/update_database"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Database"
+        />
+
+    <Button
+        android:id="@+id/add_jack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add jack"
+        />
+
+    <Button
+        android:id="@+id/add_tom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add tom"
+        />
+
+    <Button
+        android:id="@+id/add_fuck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add fuck"
+        />
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="delete"
+        />
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="update"
+        />
+
+    <Button
+        android:id="@+id/query"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="query"
+        />
+
+
+</LinearLayout>
