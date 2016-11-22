@@ -127,9 +127,11 @@
         <activity android:name=".database.DataBaseActivity">
         </activity>
         <activity android:name=".network.tcp.TcpDemoActivity">
-
         </activity>
         <activity android:name=".network.udp.UdpDemoActivity">
+
+        </activity>
+        <activity android:name=".network.http.HttpDemoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
