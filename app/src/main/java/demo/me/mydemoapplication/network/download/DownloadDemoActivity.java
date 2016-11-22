@@ -35,6 +35,7 @@ public class DownloadDemoActivity extends AppCompatActivity {
 
     private ProgressBar mProgressBar;
     private TextView mTextView;
+    private boolean pause = false;
 
     Handler mHandler = new Handler() {
         @Override
@@ -56,10 +57,18 @@ public class DownloadDemoActivity extends AppCompatActivity {
         mProgressBar.setProgress(0);
         mTextView = (TextView) findViewById(R.id.txt_progress);
 
+        findViewById(R.id.pause).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                pause = true;
+            }
+        });
+
 
         findViewById(R.id.start).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
+                pause = false;
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -73,35 +82,46 @@ public class DownloadDemoActivity extends AppCompatActivity {
                                     }
                                 }
                                 File file = new File(getExternalCacheDir() + FILE_PATH);
+
+                                int completeSize = 0;
+
                                 if (file.exists()) {
-                                    if (file.delete()) {
-                                        Log.d(TAG, "run: delete file success");
+                                    completeSize += file.length();
+                                } else {
+                                    if (file.createNewFile()) {
+                                        Log.d(TAG, "onClick: create file success");
                                     }
-                                }
-                                if (file.createNewFile()) {
-                                    Log.d(TAG, "onClick: create file success");
                                 }
                                 RandomAccessFile accessFile = new RandomAccessFile(file, "rwd");
 
-                                int completeSize = 0;
                                 byte[] buffer = new byte[1024];
                                 int length = 0;
 
                                 URLConnection urlConnection = url.openConnection();
-                                int fileSize = urlConnection.getContentLength();
-                                Log.d(TAG, "run: fileSize :" + fileSize);
+                                urlConnection.setRequestProperty("Range", "bytes=" + completeSize + "-");
+                                long leftSize = urlConnection.getContentLength();
+                                long fileSize = leftSize + completeSize;
+                                Log.d(TAG, "run: fileSize :" + leftSize);
                                 InputStream inputStream = urlConnection.getInputStream();
 
-                                while ((length = inputStream.read(buffer)) != -1) {
+                                if (completeSize == fileSize) {
+                                    Log.d(TAG, "run: file is exits and download over");
+                                    return;
+                                } else if (completeSize > fileSize) {
+                                    Log.d(TAG, "run: file is exits but like not the file.");
+                                    return;
+                                }
+
+                                accessFile.seek(completeSize);
+
+                                while (!pause && (length = inputStream.read(buffer)) != -1) {
                                     accessFile.write(buffer, 0, length);
                                     completeSize += length;
                                     Message message = new Message();
                                     message.arg1 = (int) (completeSize * 100f / fileSize);
-                                    Log.d(TAG, "run: download progress:" + message.arg1 + ",completeSize:" + completeSize);
+                                    Log.d(TAG, "run: download progress:" + message.arg1 + ",completeSize:" + completeSize + ",fileSize:" + fileSize);
                                     mHandler.sendMessage(message);
                                 }
-
-                                Log.d(TAG, "onClick: download over");
 
                                 inputStream.close();
                                 accessFile.close();
