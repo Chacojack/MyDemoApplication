@@ -125,9 +125,11 @@
         <activity android:name=".broadcast.BroadcastActivity">
         </activity>
         <activity android:name=".database.DataBaseActivity">
-
         </activity>
         <activity android:name=".network.tcp.TcpDemoActivity">
+
+        </activity>
+        <activity android:name=".network.udp.UdpDemoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
