@@ -132,9 +132,10 @@
         <activity android:name=".network.udp.UdpDemoActivity">
         </activity>
         <activity android:name=".network.http.HttpDemoActivity">
-
         </activity>
         <activity android:name=".network.download.DownloadDemoActivity">
+        </activity>
+        <activity android:name=".ui.fragment.FragmentActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
