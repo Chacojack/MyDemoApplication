@@ -136,6 +136,9 @@
         <activity android:name=".network.download.DownloadDemoActivity">
         </activity>
         <activity android:name=".ui.fragment.FragmentActivity">
+
+        </activity>
+        <activity android:name=".thread.AsyncTaskActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
