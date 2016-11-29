@@ -148,6 +148,9 @@
         </service>
 
         <activity android:name=".mutiprocess.LocalActivity">
+
+        </activity>
+        <activity android:name=".ui.touch.TouchEventActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
