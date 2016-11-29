@@ -136,9 +136,18 @@
         <activity android:name=".network.download.DownloadDemoActivity">
         </activity>
         <activity android:name=".ui.fragment.FragmentActivity">
-
         </activity>
         <activity android:name=".thread.AsyncTaskActivity">
+        </activity>
+
+        <service
+            android:name=".mutiprocess.RemoteService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote">
+        </service>
+
+        <activity android:name=".mutiprocess.LocalActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
