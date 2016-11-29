@@ -23,6 +23,8 @@ public class AsyncTaskActivity extends AppCompatActivity {
 
         MyAsyncTask myAsyncTask = new MyAsyncTask();
         myAsyncTask.execute("开始异步线程");
+        myAsyncTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "开始异步线程");
+
 
     }
 
