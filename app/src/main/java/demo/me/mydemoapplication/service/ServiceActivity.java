@@ -64,5 +64,22 @@ public class ServiceActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        findViewById(R.id.other_thread).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                Log.d(TAG, "run: Thread activity id :" + Thread.currentThread().getId());
+                new Thread() {
+                    @Override
+                    public void run() {
+                        Log.d(TAG, "run: Thread id :" + Thread.currentThread().getId());
+                        Intent intent = new Intent(ServiceActivity.this, MyService.class);
+                        startService(intent);
+                    }
+                }.start();
+            }
+        });
+
+
     }
 }

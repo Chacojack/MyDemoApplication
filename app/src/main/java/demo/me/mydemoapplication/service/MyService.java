@@ -18,9 +18,9 @@ public class MyService extends Service {
     private MyBinder mMyBinder;
 
 
-    public class MyBinder extends Binder{
+    public class MyBinder extends Binder {
 
-        MyService getService(){
+        MyService getService() {
             return MyService.this;
         }
 
@@ -36,7 +36,7 @@ public class MyService extends Service {
 
     @Override
     public void onCreate() {
-        Log.d(TAG, "onCreate() called");
+        Log.d(TAG, "onCreate() called . Thread id:" + Thread.currentThread().getId());
         super.onCreate();
     }
 
