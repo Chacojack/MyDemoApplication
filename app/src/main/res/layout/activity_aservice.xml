@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/activity_aservice"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="demo.me.mydemoapplication.aidl.AServiceActivity">
+
+    <Button
+        android:id="@+id/bind_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bind"
+        />
+
+    <Button
+        android:id="@+id/execute_a_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="execute A"
+        />
+
+    <Button
+        android:id="@+id/execute_a1_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="execute B"
+        />
+
+    <Button
+        android:id="@+id/unbind_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="unbind"
+        />
+
+</LinearLayout>

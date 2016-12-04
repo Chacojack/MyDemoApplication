@@ -119,11 +119,6 @@
             android:configChanges="screenSize|orientation">
         </activity>
         <activity android:name=".service.ServiceActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
 
         <service android:name=".service.MyService"/>
@@ -153,10 +148,23 @@
         </service>
 
         <activity android:name=".mutiprocess.LocalActivity">
-
         </activity>
         <activity android:name=".ui.touch.TouchEventActivity">
+        </activity>
 
+        <service
+            android:name=".aidl.AService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote">
+        </service>
+
+        <activity android:name=".aidl.AServiceActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
     </application>
 
