@@ -160,16 +160,13 @@
         </service>
 
         <activity android:name=".aidl.AServiceActivity">
-
         </activity>
         <activity android:name=".ui.popup.PopupWindowActivity">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN"/>-->
-
-                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
-            <!--</intent-filter>-->
         </activity>
         <activity android:name=".ui.transition.TransitionActivity">
+
+        </activity>
+        <activity android:name=".ui.transition.Transition2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
