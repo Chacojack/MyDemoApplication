@@ -164,9 +164,11 @@
         <activity android:name=".ui.popup.PopupWindowActivity">
         </activity>
         <activity android:name=".ui.transition.TransitionActivity">
-
         </activity>
         <activity android:name=".ui.transition.Transition2Activity">
+
+        </activity>
+        <activity android:name=".ui.toast.ToastActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
