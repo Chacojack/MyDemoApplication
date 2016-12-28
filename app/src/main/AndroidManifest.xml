@@ -166,9 +166,11 @@
         <activity android:name=".ui.transition.TransitionActivity">
         </activity>
         <activity android:name=".ui.transition.Transition2Activity">
-
         </activity>
         <activity android:name=".ui.toast.ToastActivity">
+
+        </activity>
+        <activity android:name=".ui.ashmem.AshmemActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
